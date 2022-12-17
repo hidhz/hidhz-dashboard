@@ -1,0 +1,67 @@
+import React from 'react'
+import Container from './Container'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faTable, faLaptop, faCreditCard, faFingerprint, faList } 
+from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import Sidebar from './Sidebar'
+
+export default function Navbar(){
+  const navMenu = React.useRef(null)
+  const headerRef = React.useRef(null)
+
+  window.onscroll = function(){
+    const fixedNav = headerRef.current.offsetTop;
+    if(window.pageYOffset > fixedNav){
+        headerRef.current.classList.add('navbar-fixed');
+    } else{
+        headerRef.current.classList.remove('navbar-fixed');
+    }
+  }
+
+  const navbarClick = (e) => {
+    e.preventDefault()
+    e.target.classList.toggle('hamburger-active')
+    navMenu.current.classList.toggle('hidden')
+  }
+  const links = [
+    {path: '/', name: 'Home', icon: faHome},
+    {path: '/dashboard', name: 'Dashboard', icon: faLaptop},
+    {path: '/tabel-transaksi', name: 'Tables', icon: faTable},
+    {path: '/debit-kredit', name: 'Debit/Kredit', icon: faCreditCard},
+    {path: '/todo-list', name: 'Todo List', icon: faList},
+    {path: '/login', name: 'Login', icon: faFingerprint},
+  ]
+  return (
+    <header ref={headerRef} className="bg-transparent top-0 left-0 absolute w-full flex items-center z-10">
+       <Container padding="px-8">
+         <div className="flex items-center justify-beetwen">
+           <p className="font-bold text-lg block text-slate-500 py-6">Hidhz <span className="text-primary">'Dashboard</span></p>
+           <div className="flex items-center px-4">
+             <button name="hamburger" className="block absolute right-8" onClick={navbarClick}>
+               <span className="hamburger-line transition duration-300 origin-top-left aese-in-out"></span>
+               <span className="hamburger-line transition duration-300 aese-in-out"></span>
+               <span className="hamburger-line transition duration-300 origin-bottom-left aese-in-out"></span>
+             </button>
+{/*             <nav ref={navMenu} id="nav-menu" className="hidden absolute py-6 bg-white rounded-lg shadow-lg max-w-[250px] w-full right-4 top-full"> */}
+             <nav ref={navMenu} id="nav-menu" className="hidden absolute left-0 top-0">
+	       <Sidebar />
+{/*               <ul className="block">
+	 	 {links.map((link) => {
+		   return (
+                   <li key={link.name} className="group">
+                     <Link to={link.path} className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
+   		       <FontAwesomeIcon icon={ link.icon } />
+	     	       <span className="relative bottom-1 left-2">{link.name}</span>
+		     </Link>
+                   </li>
+		   )
+		 })}
+               </ul> */}
+            </nav>
+          </div>
+        </div>
+</Container>
+    </header>
+  )
+}
