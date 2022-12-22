@@ -4,8 +4,10 @@ import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptop, faTable, faCreditCard, faFaceSmile, faMugHot, faEyeSlash, faList }
 from '@fortawesome/free-solid-svg-icons'
+//import {useContextService} from './../Context/ContextService'
 
 export default function Home() {
+  //const context = useContextService()
   const links = [
     {path: '/', name: 'empty halaman', icon: faMugHot},
     {path: '/about', name: 'perkenalan', icon: faFaceSmile},
@@ -16,6 +18,7 @@ export default function Home() {
     {path: '/', name: 'gatau apa lagi', icon: faEyeSlash},
 
   ]
+//  console.log(context)
   return (
     <Container padding="pt-24 px-8">
         <h1 className="font-bold text-3xl text-slate-500 font-ibm">Introduction my Web App</h1>
@@ -32,6 +35,7 @@ export default function Home() {
 	  )
 	})}
 	</ul>
+      <h1></h1>
     </Container>
   )
 }

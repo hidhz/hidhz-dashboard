@@ -3,8 +3,9 @@ import Container from './Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faTable, faLaptop, faCreditCard, faFingerprint, faList } 
 from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
+import {gsap} from 'gsap'
 
 export default function Navbar(){
   const navMenu = React.useRef(null)
@@ -20,10 +21,15 @@ export default function Navbar(){
   }
 
   const navbarClick = (e) => {
-    e.preventDefault()
     e.target.classList.toggle('hamburger-active')
-    navMenu.current.classList.toggle('hidden')
+    navMenu.current.classList.toggle("hidden")
+    gsap.from(navMenu.current, {
+       opacity: 0,
+       x: -300,
+       duration: 1
+    })
   }
+
   const links = [
     {path: '/', name: 'Home', icon: faHome},
     {path: '/dashboard', name: 'Dashboard', icon: faLaptop},
@@ -40,28 +46,15 @@ export default function Navbar(){
            <div className="flex items-center px-4">
              <button name="hamburger" className="block absolute right-8" onClick={navbarClick}>
                <span className="hamburger-line transition duration-300 origin-top-left aese-in-out"></span>
-               <span className="hamburger-line transition duration-300 aese-in-out"></span>
-               <span className="hamburger-line transition duration-300 origin-bottom-left aese-in-out"></span>
+               <span className="hamburger-line transition duration-300 ease-in-out"></span>
+               <span className="hamburger-line transition duration-300 origin-bottom-right aese-in-out"></span>
              </button>
-{/*             <nav ref={navMenu} id="nav-menu" className="hidden absolute py-6 bg-white rounded-lg shadow-lg max-w-[250px] w-full right-4 top-full"> */}
              <nav ref={navMenu} id="nav-menu" className="hidden absolute left-0 top-0">
 	       <Sidebar />
-{/*               <ul className="block">
-	 	 {links.map((link) => {
-		   return (
-                   <li key={link.name} className="group">
-                     <Link to={link.path} className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
-   		       <FontAwesomeIcon icon={ link.icon } />
-	     	       <span className="relative bottom-1 left-2">{link.name}</span>
-		     </Link>
-                   </li>
-		   )
-		 })}
-               </ul> */}
             </nav>
           </div>
         </div>
-</Container>
+      </Container>
     </header>
   )
 }

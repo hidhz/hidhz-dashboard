@@ -17,6 +17,7 @@
     "daisyui": "^2.42.1",
     "flowbite": "^1.5.5",
     "flowbite-react": "^0.3.7",
+    "gsap": "^3.11.3",
     "moment": "^2.29.4",
     "netlify-cli": "^12.2.9",
     "postcss": "^8.4.19",

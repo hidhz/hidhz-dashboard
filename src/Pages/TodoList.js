@@ -12,8 +12,8 @@ function TodoList() {
   const [loading, setLoading] = useState(true)
 
   const postData = () => {
-    fetch(`http://127.0.0.1:8000/todolist/api/${checkedId.id}/`, {
-//    fetch(`http://hidhzxmifta.pythonanywhere.com/todolist/api/${checkedId.id}/`, {
+//    fetch(`http://127.0.0.1:8000/todolist/api/${checkedId.id}/`, {
+    fetch(`https://hidhz-backend.up.railway.app/todolist/api/${checkedId.id}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -22,8 +22,8 @@ function TodoList() {
     })
   }
   const getData = async () => {
-    const response = await fetch('http://127.0.0.1:8000/todolist/api/')
-//    const response = await fetch('http://hidhzxmifta.pythonanywhere.com/todolist/api/')
+//    const response = await fetch('http://127.0.0.1:8000/todolist/api/')
+    const response = await fetch('https://hidhz-backend.up.railway.app/todolist/api/')
     const data = await response.json()
     setTodos(data.results)
     setLoading(false)

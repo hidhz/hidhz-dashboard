@@ -4,7 +4,7 @@ import { faHome, faTable, faLaptop, faCircle, faEnvelope, faCalendar, faPhone}
 from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-export default function Sidebar() {
+export default function Sidebar(){
   return (<>
    <aside class="w-64" aria-label="Sidebar">
      <div class="overflow-y-auto h-[100vh] py-4 px-3 rounded dark:bg-gray-800 shadow-lg bg-white">

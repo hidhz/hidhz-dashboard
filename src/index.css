@@ -12,17 +12,25 @@
 }
 
 .hamburger-line{
-    @apply w-[30px] h-[2px] my-2 block bg-dark;
+    @apply h-[3px] my-2 block bg-dark rounded-lg;
+}
+
+div button > span:nth-child(1){@apply w-[22px];}
+div button > span:nth-child(2){@apply w-[37px];}
+div button > span:nth-child(3){
+    @apply w-[25px] mt-[-1px];
+    float: right;
 }
 
 .hamburger-active > span:nth-child(1){
-    @apply rotate-45 bg-primary;
+    @apply bg-red-700 rotate-[40deg] w-[14px];
 }
 .hamburger-active > span:nth-child(2){
-    @apply scale-0;
+   @apply -rotate-45 bg-red-700 w-[25px];
+
 }
 .hamburger-active > span:nth-child(3){
-    @apply bg-primary -rotate-45;
+    @apply bg-red-700 rotate-[40deg] w-[14px];
 }
 .input-range{
   @apply w-full h-1 p-0 rounded-md appearance-none;

@@ -8,8 +8,8 @@ const TodoDelete = () => {
   const navigate = useNavigate()
 
   const handleDelete = () => {
-  fetch(`http://127.0.0.1:8000/todolist/api/${itemDelete.id}/`, {
-//  fetch(`http://hidhzxmifta.pythonanywhere.com/todolist/api/${itemDelete.id}/`, {
+//  fetch(`http://127.0.0.1:8000/todolist/api/${itemDelete.id}/`, {
+  fetch(`https://hidhz-backend.up.railway.app/todolist/api/${itemDelete.id}/`, {
       method: 'DELETE',
       headers: {
 	'Content-Type': 'application/json'

@@ -11,13 +11,13 @@ import TransaksiDelete from './Actions/TransaksiDelete'
 import About from './Pages/About'
 import TodoList from './Pages/TodoList'
 import TodoDelete from './Actions/TodoDelete'
-//import {ContextServiceProvider} from './Context/ContextService'
+import {ContextAppProvider} from './Context/context-app'
 
 function App() {
   return (
     <>
-  {/*  <ContextServiceProvider> */}
-      <Navbar />
+    <ContextAppProvider>
+        <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -33,7 +33,7 @@ function App() {
         <Route path="/todo-list/:update" element={<TodoList />} />
         <Route path="/todo-list/delete" element={<TodoDelete />} />
       </Routes>
-  {/*   </ContextServiceProvider> */}
+    </ContextAppProvider>
     </>
   );
 }

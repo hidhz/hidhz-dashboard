@@ -11,8 +11,8 @@ function TodoAdd({setUbah}){
 
   // FUNGSI POST DATA
   const postData = () => {
-    fetch(`http://127.0.0.1:8000/todolist/api/`, {
-//    fetch(`http://hidhzxmifta.pythonanywhere.com/todolist/api/`, {
+//    fetch(`http://127.0.0.1:8000/todolist/api/`, {
+    fetch(`https://hidhz-backend.up.railway.app/todolist/api/`, {
       method: 'POST',
       headers: {
 	'Content-Type': 'application/json'
@@ -30,8 +30,8 @@ function TodoAdd({setUbah}){
 
   // FUNGSI UPDATE DATA
   const updateData = () => {
-    fetch(`http://127.0.0.1:8000/todolist/api/${params.update}/`, {
-//    fetch(`http://hidhzxmifta.pythonanywhere.com/todolist/api/${params.update}/`, {
+//    fetch(`http://127.0.0.1:8000/todolist/api/${params.update}/`, {
+    fetch(`https://hidhz-backend.up.railway.app/todolist/api/${params.update}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
