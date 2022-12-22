@@ -8,7 +8,8 @@ from '@fortawesome/free-solid-svg-icons'
 function TabelTransaksi(){
   const [datas, setDatas] = React.useState(null)
   const getData = async () => {
-    const response = await fetch('http://127.0.0.1:8000/myadmin/api/')
+//    const response = await fetch('http://127.0.0.1:8000/myadmin/api/')
+    const response = await fetch('https://hidhz-backend.up.railway.app/myadmin/service/')
     const data = await response.json()
     setDatas(data.results)
   }

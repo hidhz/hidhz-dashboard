@@ -18,7 +18,8 @@ function TabelServicesAdd(){
   const navigate = useNavigate()
 
   const postData = () => {
-    fetch('http://127.0.0.1:8000/myadmin/service/', {
+//    fetch('http://127.0.0.1:8000/myadmin/service/', {
+    fetch('https://hidhz-backend.up.railway.app/myadmin/service/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

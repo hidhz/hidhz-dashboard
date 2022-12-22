@@ -16,7 +16,8 @@ function TransaksiAdd(){
 
   useEffect( () => {
     async function getData() {
-      const res = await fetch(`http://127.0.0.1:8000/myadmin/api/${slugEdit}/`)
+//      const res = await fetch(`http://127.0.0.1:8000/myadmin/api/${slugEdit}/`)
+      const res = await fetch(`https://hidhz-backend.up.railway.app/myadmin/api/${slugEdit}/`)
       const dt = await res.json()
       setTglup(dt.tanggal)
       setTransaksi(dt.transaksi)
@@ -27,7 +28,8 @@ function TransaksiAdd(){
   }, [slugEdit])
 
   const postData = () => {
-    fetch('http://127.0.0.1:8000/myadmin/api/', {
+//    fetch('http://127.0.0.1:8000/myadmin/api/', {
+    fetch('https://hidhz-backend.up.railway.app/myadmin/api/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +45,7 @@ function TransaksiAdd(){
   }
 
   const updateData = () => {
-    fetch(`http://127.0.0.1:8000/myadmin/api/${slugEdit}/`, {
+    fetch(`https://hidhz-backend.up.railway.app/myadmin/api/${slugEdit}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

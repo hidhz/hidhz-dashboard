@@ -10,7 +10,7 @@ function TransaksiDelete() {
 
   useEffect(() => {
     const getData = async() => {
-      const res = await fetch(`http://127.0.0.1:8000/myadmin/api/${slugDelete}/`)
+      const res = await fetch(`https://hidhz-backend.up.railway.app/myadmin/api/${slugDelete}/`)
       const data = await res.json()
       setData(data)
     }
@@ -18,7 +18,7 @@ function TransaksiDelete() {
   }, [slugDelete])
 
   const deleteData = () => {
-    fetch(`http://127.0.0.1:8000/myadmin/api/${slugDelete}/`, {
+    fetch(`https://hidhz-backend.up.railway.app/myadmin/api/${slugDelete}/`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

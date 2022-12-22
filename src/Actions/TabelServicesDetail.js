@@ -17,7 +17,7 @@ function TabelServicesDetail(){
   const navigate = useNavigate()
   // Get data
   async function getData() {
-    const response = await fetch(`http://127.0.0.1:8000/myadmin/service/${slugDetail}/`)
+    const response = await fetch(`https://hidhz-backend.up.railway.app/myadmin/service/${slugDetail}/`)
     const results = await response.json()
     setNama(results.nama)
     setTanggalMasuk(results.tanggalMasuk)
@@ -31,7 +31,8 @@ function TabelServicesDetail(){
   }
   // Delete data
   const deleteData = () => {
-    fetch(`http://127.0.0.1:8000/myadmin/service/${slugDetail}/`, {
+//    fetch(`http://127.0.0.1:8000/myadmin/service/${slugDetail}/`, {
+    fetch(`https://hidhz-backend.up.railway.app/myadmin/service/${slugDetail}/`, {
       method: 'DELETE',
       headers: {
 	'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ function TabelServicesDetail(){
   // Update data
   const postData = async e => {
     e.preventDefault()
-    await fetch(`http://127.0.0.1:8000/myadmin/service/${slugDetail}/`, {
+    await fetch(`https://hidhz-backend.up.railway.app/myadmin/service/${slugDetail}/`, {
       method: 'PUT',
       headers: {
 	'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ export default function TabelServices(){
   const [data, setData] = useState(null)
 
   const getData = async () => {
-    const response = await fetch("http://127.0.0.1:8000/myadmin/service/")
+    const response = await fetch("https://hidhz-backend.up.railway.app/myadmin/service/")
     const result = await response.json()
     setData(result.results)
   }
