@@ -15,6 +15,7 @@ export default function Home() {
     {path: '/tables', name: 'tables', icon: faTable},
     {path: '/debit-kredit', name: 'debit & kredit', icon: faCreditCard},
     {path: '/todo-list', name: 'Todo List', icon: faList},
+    {path: '/terserah-mu', name: 'coba buka en mif', icon: faMugHot},
     {path: '/', name: 'gatau apa lagi', icon: faEyeSlash},
 
   ]

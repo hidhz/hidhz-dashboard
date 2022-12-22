@@ -15,22 +15,22 @@
     @apply h-[3px] my-2 block bg-dark rounded-lg;
 }
 
-div button > span:nth-child(1){@apply w-[22px];}
-div button > span:nth-child(2){@apply w-[37px];}
-div button > span:nth-child(3){
+div .hamburger > span:nth-child(1){@apply w-[22px];}
+div .hamburger > span:nth-child(2){@apply w-[37px];}
+div .hamburger > span:nth-child(3){
     @apply w-[25px] mt-[-1px];
     float: right;
 }
 
 .hamburger-active > span:nth-child(1){
-    @apply bg-red-700 rotate-[40deg] w-[14px];
+    @apply bg-red-700 rotate-[28deg] w-[13px];
 }
 .hamburger-active > span:nth-child(2){
    @apply -rotate-45 bg-red-700 w-[25px];
 
 }
 .hamburger-active > span:nth-child(3){
-    @apply bg-red-700 rotate-[40deg] w-[14px];
+    @apply bg-red-700 rotate-[30deg] w-[13px];
 }
 .input-range{
   @apply w-full h-1 p-0 rounded-md appearance-none;
@@ -46,4 +46,11 @@ div button > span:nth-child(3){
 }
 .input-date{
   @apply w-[160px] input input-bordered py-2 pl-2 rounded-md text-xl text-slate-600;
+}
+.cns{
+ background-image: url('/public/assets/bg-katain.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ background-position: fixed;
 }
