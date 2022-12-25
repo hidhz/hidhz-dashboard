@@ -2,7 +2,6 @@ import {useParams, Link, useNavigate} from 'react-router-dom'
 import {useState, useEffect, useRef} from 'react'
 import Container from './../Components/Container'
 import Button from './../Components/Button'
-import $ from 'jquery'
 
 export default function RandomPesanKomen(){
   const {id} = useParams()
