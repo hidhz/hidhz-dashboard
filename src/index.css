@@ -47,10 +47,13 @@ div .hamburger > span:nth-child(3){
 .input-date{
   @apply w-[160px] input input-bordered py-2 pl-2 rounded-md text-xl text-slate-600;
 }
+
 .cns{
- background-image: url('/public/assets/bg-katain.jpg');
+  @apply bg-slate-600/10;
+/* background-image: url('/public/assets/bg-katain.jpg');
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
- background-position: fixed;
+ background-position: fixed;*/
 }
+

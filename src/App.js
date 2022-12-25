@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import RandomPesan from './Pages/RandomPesan'
+import RandomPesanKomen from './Pages/RandomPesanKomen'
 import Dashboard from './Pages/Dashboard'
 import TabelTransaksi from './Pages/TabelTransaksi'
 import TabelServices from './Pages/TabelServices'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/todo-list/:update" element={<TodoList />} />
         <Route path="/todo-list/delete" element={<TodoDelete />} />
         <Route path="/terserah-mu" element={<RandomPesan />} />
+        <Route path="/terserah-mu/komen/:id" element={<RandomPesanKomen />} />
       </Routes>
   {/*   </ContextServiceProvider> */}
     </>
